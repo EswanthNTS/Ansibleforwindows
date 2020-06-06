@@ -1,0 +1,19 @@
+Run the below command to install the necessary software required for installing ansible.
+
+apt install software-properties-common
+apt-add-repository --yes --update ppa:ansible/ansible
+apt update -y
+apt install ansible -y
+ansible --version
+
+
+
+Since Ansible runs on python we need to install python on the controller and also Setup Libraries and WinRM
+
+
+sudo apt-get update
+apt-get install python-pip -y
+pip install pywinrm -y
+apt-get install gcc python-dev -y
+apt install python3-pip -y 
+apt-get install python3-winrm -y 
