@@ -1,0 +1,18 @@
+Without automation, building and maintaining large-scale modern IT systems can be a resource-intensive undertaking and can lead to increased risk due to manual errors. 
+Configuration and resource management is an automated method for maintaining computer systems and software in a known, consistent state.
+
+
+How Configuration Management Works
+
+There are several components in a configuration management system. 
+Managed systems can include servers, storage, networking, and software. 
+These are the targets of the configuration management system. The goal is to maintain these systems in known, determined states. 
+Another aspect of a configuration management system is the description of the desired state for the systems. 
+The third major aspect of a configuration management system is automation software, which is responsible for making sure that the target systems and software are maintained in the desired state.
+
+Configuration Management Benefits
+
+The primary benefit of configuration management is consistency of systems and software. With configuration management.
+you no longer guess or hope that a configuration is current. It is correct because the configuration management system ensures that it is correct.
+When combined with automation, configuration management can improve efficiency because manual configuration processes are replaced with automated processes. 
+This also makes it possible to manage more targets with the same or even fewer resources.
