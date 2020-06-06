@@ -13,7 +13,7 @@ Since Ansible runs on python we need to install python on the controller and als
 
 sudo apt-get update
 apt-get install python-pip -y
-pip install pywinrm -y
+pip install pywinrm 
 apt-get install gcc python-dev -y
 apt install python3-pip -y 
 apt-get install python3-winrm -y 
