@@ -48,3 +48,6 @@ ansible_python_interpreter: C:\Users\AzureUser\AppData\Local\Programs\Python\Pyt
 
 
 To close the file you have to put :wq
+
+
+ansible <groupname> -m win_ping     to check the connectivity
