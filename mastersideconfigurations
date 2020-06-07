@@ -21,6 +21,8 @@ apt-get install python3-winrm -y
 
 vim /etc/ansible/hosts
 Enter the host details
+[win]
+10.0.0.7
 
 mkdir /etc/ansible/group_vars
 
@@ -43,3 +45,6 @@ ansible_winrm_transport: basic
 ansible_winrm_port: 5985
 
 ansible_python_interpreter: C:\Users\AzureUser\AppData\Local\Programs\Python\Python37\python
+
+
+To close the file you have to put :wq
