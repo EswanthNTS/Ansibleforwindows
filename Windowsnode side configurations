@@ -1,6 +1,7 @@
 Create auser named ansible
 add the user to the admin group 
 
+Refernce Doc:---   https://geekflare.com/connecting-windows-ansible-from-ubuntu/
 
 
 Execute this Script
