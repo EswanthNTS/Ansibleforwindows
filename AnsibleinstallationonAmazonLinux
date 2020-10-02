@@ -77,7 +77,7 @@ roles/<rolename>/
           vars/main.yml
           handlers/main.yml
            meta/main.yml
-ansible-galaxy init myfirstrole
+sudo ansible-galaxy init myfirstrole
 
 
 
