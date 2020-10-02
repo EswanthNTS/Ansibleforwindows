@@ -1,0 +1,26 @@
+Add a EPEL (Extra Packages for Enterprise Linux)third party repository to get packages for Ansible
+
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+Install Ansible
+
+yum install ansible -y 
+Check Ansible version
+
+ansible --version
+Create a new user for ansible administration & grant admin access to user (Master and Slave)
+
+useradd ansadmin           Master and slave
+passwd ansadmin             Master and slave
+Go to visudo and add ansadmin ALL=(ALL) NOPASSWD: (ALL) in the last line and save the file       in both master and slave 
+Go to /etc/ssh/sshd_config  change PasswordAuthentication no to yes                              in both master and slave
+
+Execute Service sshd restart     in both master and slave
+
+login into ansadmin and generate the keys using   ssh-keygen                                     Only master
+ssh-copy-id <target-server- ip>                                                                  Only master
+
+vim /etc/ansible/hosts   add the Target servers priviate ip address
+
+Run ansible command as ansadmin user it should be successful (Master)
+ansible all -m ping
+
