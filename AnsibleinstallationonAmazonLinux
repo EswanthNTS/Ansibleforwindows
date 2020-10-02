@@ -24,3 +24,63 @@ vim /etc/ansible/hosts   add the Target servers priviate ip address
 Run ansible command as ansadmin user it should be successful (Master)
 ansible all -m ping
 
+Ad-hoc commands
+
+ansible all -m copy -a "src=/home/dummy   dest=/tmp/"    
+ansible all --list-hosts
+ansible all -a "ls -al /home/ansible"
+ansible all -a "cat /var/log/messages“
+ansible all -m setup
+
+Playbooks 
+ansible-playbook <playbook>.yml
+
+Playbooks are Ansible’s configuration, deployment, and orchestration language
+Playbooks describe a policy you want your remote systems to enforce, or a set of steps in a general IT process.
+Playbooks orchestrate steps of any manual ordered process, even as different steps must bounce back and forth 
+between sets of machines in particular orders.
+
+Each playbook is composed of one or more ‘plays’ in a list
+The goal of a play is to map a group of hosts to run tasks
+Task is nothing more than a call to an ansible module
+
+Playbooks are divided into 3 sections:
+    1. Target Section - Defines the hosts against which playbooks tasks has to be executed
+    2. Variable Section - Defines variables
+    3. Tasks Section - List of all modules that we need to run, in an order
+
+Example:
+
+--- # My First YAML playbook
+- hosts: all       
+  become: yes              
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Install HTTPD server on centos 7
+      action: yum name=httpd state=installed
+      notify: Restart HTTPD   # this is called only if the action is ran & successful #
+  handlers:
+      - name: Restart HTTPD   # this has to match the notify name #
+        action: service name=httpd state=restarted
+        
+Roles:---
+Adding more & more functionality to the playbooks will make it difficult to maintain in a single file
+We can organize playbooks into a directory structure called roles
+This is already possible by ‘include’ directives however Roles are automation around it
+
+Creating Role Framework
+
+Master.yml
+roles/<rolename>/
+          tasks/main.yml
+          vars/main.yml
+          handlers/main.yml
+           meta/main.yml
+ansible-galaxy init myfirstrole
+
+
+
+
+
+
